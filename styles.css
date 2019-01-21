@@ -39,15 +39,23 @@ nav > * {
   color: #000;
   font-size: 19px;
   font-weight: 900;
+  background-image: linear-gradient(
+      to right,
+      rgb(242, 64, 115),
+      rgb(242, 64, 115) 50%,
+      transparent 50%);
+      background-size: 200% 100%;
+      background-position: 100%;
   transition: 1s;
+  cursor: crosshair;
 }
 
 .chirpus-menu:hover {
-  font-size: 35px;
-  animation: logo 5s linear infinite alternate;
-  padding: 5px;
-  transition: all 1s cubic-bezier(0.000, 0.000, 0.230, 1);
-
+  font-size: 30px;
+  color: white;
+  transition: 1s;
+  background-position: 0%;
+  padding: .5em 1em .5em 1em;
 }
 
 .menu:hover a {
@@ -59,6 +67,7 @@ nav > * {
 .menu a {
   text-align: text-top;
   transition: 1s;
+  cursor: crosshair;
 }
 
 .menu, .hire-us {
@@ -72,6 +81,7 @@ nav > * {
   border-radius: 10px;
   padding: .4em 1.75em .4em 1.75em;
   transition: 1s;
+  cursor: help;
 }
 
 .hire-us:hover{
@@ -83,6 +93,7 @@ nav > * {
 
 .hire-us > a {
   color: #f9fafc;
+  cursor: help;
 }
 
 .upper-body {
@@ -106,8 +117,7 @@ nav > * {
 
 .container-left:hover {
   flex: 3;
-  font-size: 19px;
-  transition: all 1s cubic-bezier(0.000, 0.000, 0.230, 1);
+  transition: 1s;
   background-position: 0%;
   padding-left: 30px;
   padding-right: 30px;
@@ -116,18 +126,27 @@ nav > * {
 
 .container-left:hover > p {
     border-color: rgba(247, 193, 162, 0.8);
+    font-size: 19px;
     border-width: 5px;
-    transition: 1s;
+    color: #000;
+    transition: all 1s;
 }
 
 .container-left:hover > h1 {
   color: rgb(242, 64, 115);
-  transition: 1s;
+  transition: all 1s;
 }
 
 p, h1 {
   transition: 1s;
 }
+
+/*for desktop first response. want to display this block below floating circles*/
+
+.container-bottom {
+  display: none;
+}
+
 
 /*Trying to add more animation to hover state of left container
 
@@ -170,14 +189,13 @@ p, h1 {
 }
 
 
-/* */
+/*CIRCLES ON THE RIGHT*/
 .container-right {
   flex: 1;
   padding-left: 50px;
+  height: 23em;
   transition: 1s;
 }
-
-/*CIRCLES ON THE RIGHT*/
 
 /*pink cirle*/
 .circle-pink {
@@ -254,6 +272,7 @@ p, h1 {
   text-align: center;
   transition: 1s;
   animation: scroll-down-move 5s linear infinite alternate;
+  cursor: s-resize;
 }
 
 .scroll:hover {
@@ -266,12 +285,12 @@ p, h1 {
 .scroll > a {
   color: #f9fafc;
   font-size: 16px;
-
+  cursor: s-resize;
 }
 
 .space {
-  padding-top: 140px;
-  padding-bottom: 40px;
+  padding-top: 1em;
+  padding-bottom: 3em;
 }
 
 
@@ -393,81 +412,133 @@ p, h1 {
   }
 }
 
-/*on hover left content block*/
-@keyframes clockwise {
-  0% {
-    top: -5px;
-    left: 0;
+
+
+/*Desktop First*/
+
+/*Tablet Response*/
+
+@media (max-width: 767px) {
+
+  .upper-body {
+    padding-top: 0;
+    width: 100%;
   }
-  12% {
-    top: -2px;
-    left: 2px;
+
+  .container-left {
+    display: none;
   }
-  25% {
-    top: 0;
-    left: 5px;
+
+  .container-right {
+    display: block;
   }
-  37% {
-    top: 2px;
-    left: 2px;
+
+  .container-bottom {
+    padding-top: 15em;
+    display: block;
   }
-  50% {
-    top: 5px;
-    left: 0;
+
+  /* circles moved*/
+
+  .circle-tan {
+    width: 10em;
+    height: 10em;
+    background-color: rgba(247, 193, 162, 0.7);
+    border-radius: 50%;
+    margin-left: 15.7em;
+    margin-top: 6em;
   }
-  62% {
-    top: 2px;
-    left: -2px;
+
+  .circle-purple{
+    width: 8em;
+    height: 8em;
+    background-color: rgba(207, 130, 213, 0.6);
+    border-radius: 50%;
+    margin-left: 13em;
+    margin-top: 1em;
   }
-  75% {
-    top: 0;
-    left: -5px;
+
+  .circle-pink {
+    width: 14em;
+    height: 14em;
+    background-color: rgba(247, 136, 167, 0.6);
+    border-radius: 50%;
+    margin-left: 2.5em;
+    margin-top: 1.2em;
   }
-  87% {
-    top: -2px;
-    left: -2px;
-  }
-  100% {
-    top: -5px;
-    left: 0;
-  }
+
+
 }
 
-@keyframes counterclockwise {
-  0% {
-    top: -5px;
-    right: 0;
+/*mobile Responsive*/
+
+
+@media (max-width: 480px) {
+
+  *{
+    font-size: 14px;
   }
-  12% {
-    top: -2px;
-    right: 2px;
+
+  .main-back {
+    padding: 1em;
   }
-  25% {
-    top: 0;
-    right: 5px;
+
+  .menu, .hire-us {
+    display: block;
+    text-align: right;
+    padding-bottom: 5px;
   }
-  37% {
-    top: 2px;
-    right: 2px;
+
+  .upper-body {
+    padding-top: 6em;
+    width: 100%;
   }
-  50% {
-    top: 5px;
-    right: 0;
+
+  .container-left {
+    display: none;
   }
-  62% {
-    top: 2px;
-    right: -2px;
+
+  .container-right {
+    display: block;
+    padding-left: 0;
   }
-  75% {
-    top: 0;
-    right: -5px;
+
+  .container-bottom {
+    padding-top: 11em;
+    padding-left: 0;
+    margin-right: 0;
+    display: block;
   }
-  87% {
-    top: -2px;
-    right: -2px;
+
+  /* circles moved*/
+
+  .circle-tan {
+    width: 8em;
+    height: 8em;
+    background-color: rgba(247, 193, 162, 0.7);
+    border-radius: 50%;
+    margin-left: 11em;
+    margin-top: 4.3em;
   }
-  100% {
-    top: -5px;
-    right: 0;
+
+  .circle-purple{
+    width: 6em;
+    height: 6em;
+    background-color: rgba(207, 130, 213, 0.6);
+    border-radius: 50%;
+    margin-left: 8em;
+    margin-top: 1em;
   }
+
+  .circle-pink {
+    width: 10em;
+    height: 10em;
+    background-color: rgba(247, 136, 167, 0.6);
+    border-radius: 50%;
+    margin-left: 0em;
+    margin-top: 1.2em;
+  }
+
+
+
 }
