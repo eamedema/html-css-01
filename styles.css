@@ -40,12 +40,6 @@ nav > * {
   font-size: 19px;
   font-weight: 900;
   transition: 1s;
-  background-image: linear-gradient(
-      to bottom,
-      rgb(242, 64, 115),
-      rgb(242, 64, 115) 50%,
-      transparent 50%);
-      background-size: 100%;
 }
 
 .chirpus-menu:hover {
@@ -53,12 +47,7 @@ nav > * {
   animation: logo 5s linear infinite alternate;
   padding: 5px;
   transition: all 1s cubic-bezier(0.000, 0.000, 0.230, 1);
-  background-image: linear-gradient(
-      to bottom,
-      rgb(242, 64, 115),
-      rgb(242, 64, 115) 50%,
-      transparent 50%);
-      background-size: 100%;
+
 }
 
 .menu:hover a {
