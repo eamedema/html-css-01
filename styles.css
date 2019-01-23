@@ -33,6 +33,9 @@ nav > * {
   height: 40px;
 }
 
+.image-icon {
+  display: none;
+}
 
 .chirpus-menu {
   display: inline;
@@ -485,6 +488,11 @@ p, h1 {
     position: relative;
     max-height: 300px;
   }
+
+  .image-icon {
+    display: block;
+  }
+
 
   /* Hide the links inside the navigation menu (except for logo/home) */
   .topnav #nav-menu {
